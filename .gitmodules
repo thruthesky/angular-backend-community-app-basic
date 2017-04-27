@@ -1,0 +1,3 @@
+[submodule "src/enhancer"]
+	path = src/enhancer
+	url = https://github.com/thruthesky/enhancer

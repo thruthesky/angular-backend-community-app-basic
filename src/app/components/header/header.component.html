@@ -1,0 +1,13 @@
+<header>
+  <nav class="navbar fixed-top bg-lightgrey">
+    <div class="d-flex justify-content-between">
+      <div class="pointer" routerLink="/">Home</div>
+      <div *ngIf=" ! user.logged " class="">Logo</div>
+      <div *ngIf=" user.logged " class="">{{ user.info.name }}</div>
+      <div>
+        <span>Login</span>
+        <span class="pointer" routerLink="/register">Register</span>
+      </div>
+    </div>
+  </nav>
+</header>

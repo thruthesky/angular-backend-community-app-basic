@@ -1,0 +1,10 @@
+<header-component></header-component>
+<h1>Regster Page</h1>
+<form [formGroup]="formGroup">
+    <input formControlName="id">
+    <input formControlName="password">
+    <input formControlName="name">
+    
+    <button type="button" (click)="onClickRegister()">Register</button>
+    <button type="button">Cancel</button>
+</form>
