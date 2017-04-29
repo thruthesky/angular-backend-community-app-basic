@@ -1,0 +1,14 @@
+<div class ="well well-sm">
+<form [formGroup] = "profileForm">
+  <div *ngIf = "primary_photo_idx"> 
+      <img class="primary-photo" src = "{{file.url(primary_photo_idx)}}"/>
+  </div> <br />
+  <div class="form-group">
+    <input class="form-control" type="file" #userPic formControlName="id" (change) = "onChangePic( userPic )">
+    <button class="btn btn-primary" (click) = "onClickGoBack()">Back</button>
+    <div *ngIf="primary_photo_idx">
+    <button class="btn btn-danger" (click) = "onClickDeletePhoto( userPic )" >Delete Primary Photo</button>
+  </div>
+  </div>
+</form>
+</div>

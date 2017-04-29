@@ -1,0 +1,21 @@
+<header-component> </header-component>
+
+<form [formGroup] = "profileForm" novalidate>
+<h1> Edit Profile: </h1>
+<div class ="well well-sm">
+<div class="form-group">
+    <label class="center-block">Name:
+      <input class="form-control" formControlName="name" required>
+    </label>
+</div>
+
+<div class="form-group">
+    <label class="center-block">Email:
+      <input class="form-control" formControlName="email" required>
+    </label>
+</div>
+
+</div>
+<button type="<submit></submit>" class="btn btn-success" (click) = "onClickUpdate()" [disabled]= "!profileForm.valid">Update</button>
+<button class="btn btn-default" (click) = "onClickGoBack()"> Cancel </button>
+</form>

@@ -1,13 +1,11 @@
 <header>
-  <nav class="navbar fixed-top bg-lightgrey">
-    <div class="d-flex justify-content-between">
-      <div class="pointer" routerLink="/">Home</div>
-      <div *ngIf=" ! user.logged " class="">Logo</div>
-      <div *ngIf=" user.logged " class="">{{ user.info.name }}</div>
-      <div>
-        <span>Login</span>
-        <span class="pointer" routerLink="/register">Register</span>
-      </div>
-    </div>
-  </nav>
+    
+      <button class="btn btn-primary" routerLink="/">Home</button>
+      <span *ngIf=" ! user.logged " class="">Logo</span>
+      <button class="btn btn-info" *ngIf=" user.logged" routerLink="/editUser">Edit Profile</button>
+      <button class="btn btn-info" *ngIf=" user.logged " routerLink="/change_password"> Change Password </button>
+   
+        <button class="btn btn-primary" *ngIf="user.logged" (click) = "onClickLogOut()" >Log-out</button>
+        <button class="btn btn-primary" *ngIf="!user.logged" routerLink="/login" >Log-in</button>
+    
 </header>
