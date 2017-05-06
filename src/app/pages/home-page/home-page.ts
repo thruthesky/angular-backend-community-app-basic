@@ -12,7 +12,7 @@ export class HomePage {
     userData = this.user.data();
     primary_photo_idx;
 
-  constructor(private user: User, private file: File, private router: Router) { 
+  constructor(public user: User, private file: File, private router: Router) { 
     if (this.user.logged){
     this.getPic();
     }

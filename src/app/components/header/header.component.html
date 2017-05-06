@@ -1,11 +1,81 @@
-<header>
-    
-      <button class="btn btn-primary" routerLink="/">Home</button>
-      <span *ngIf=" ! user.logged " class="">Logo</span>
-      <button class="btn btn-info" *ngIf=" user.logged" routerLink="/editUser">Edit Profile</button>
-      <button class="btn btn-info" *ngIf=" user.logged " routerLink="/change_password"> Change Password </button>
-   
-        <button class="btn btn-primary" *ngIf="user.logged" (click) = "onClickLogOut()" >Log-out</button>
-        <button class="btn btn-primary" *ngIf="!user.logged" routerLink="/login" >Log-in</button>
-    
+<header class="fixed-top bg-slategrey white p-2 fs-08em">
+
+  <div class="d-flex justify-content-between">
+    <div class="left pointer" routerLink="/">
+      <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
+          <i class="fa fa-home fa-stack-1x slategrey" aria-hidden="true"></i>
+        </span>
+      <div class="text">Home</div>
+    </div>
+
+    <div class="d-flex align-items-center fs-1rem pointer" routerLink="/">
+      Community App
+    </div>
+
+    <div class="right pointer" (click)=" showMenu = ! showMenu ">
+      <span class="fa-stack fa-lg">
+          <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
+          <i class="fa fa-bars fa-stack-1x slategrey" aria-hidden="true"></i>
+        </span>
+      <div class="text">Menu</div>
+    </div>
+
+
+  </div>
+
 </header>
+
+<nav class="panel bg-silver" [class.active]=" showMenu ">
+  <ul class="list-style-none list-float-left p-2s fs-08em text-center">
+    <li routerLink="/login">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x slategrey" aria-hidden="true"></i>
+        <i class="fa fa-sign-in fa-stack-1x snow" aria-hidden="true"></i>
+      </span>
+      <div class="text">Login</div>
+    </li>
+    <li>
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x slategrey" aria-hidden="true"></i>
+        <i class="fa fa-sign-out fa-stack-1x snow" aria-hidden="true"></i>
+      </span>
+      <div class="text">Logout</div>
+    </li>
+    <li routerLink="/register">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x slategrey" aria-hidden="true"></i>
+        <i class="fa fa-user-plus fa-stack-1x snow" aria-hidden="true"></i>
+      </span>
+      <div class="text">Register</div>
+    </li>
+    <li routerLink="/profile">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x slategrey" aria-hidden="true"></i>
+        <i class="fa fa-user fa-stack-1x snow" aria-hidden="true"></i>
+      </span>
+      <div class="text">Profile</div>
+    </li>
+
+    <li routerLink="/password">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x slategrey" aria-hidden="true"></i>
+        <i class="fa fa-lock fa-stack-1x snow" aria-hidden="true"></i>
+      </span>
+      <div class="text">Password</div>
+    </li>
+
+  </ul>
+</nav>
+
+
+<!--<header class="fixed-top">
+
+
+  <button class="btn btn-primary" routerLink="/">Home</button>
+  <span *ngIf=" ! user.logged " class="">Logo</span>
+  <button class="btn btn-info" *ngIf=" user.logged" routerLink="/editUser">Edit Profile</button>
+  <button class="btn btn-info" *ngIf=" user.logged " routerLink="/change_password"> Change Password </button>
+  <button class="btn btn-primary" *ngIf="user.logged" (click)="onClickLogOut()">Log-out</button>
+  <button class="btn btn-primary" *ngIf="!user.logged" routerLink="/login">Log-in</button>
+</header>-->

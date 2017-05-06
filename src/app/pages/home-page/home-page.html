@@ -1,14 +1,23 @@
 <header-component></header-component>
 <div class="jumbotron">
-<p *ngIf ="!user.logged">Welcome</p>
-<p *ngIf ="user.logged"> {{user.info.name}} </p>
-<div *ngIf = "primary_photo_idx"> 
-      <img id="homeimg" (click)="onClickChange()" class="primary-photo" src = "{{file.url(primary_photo_idx)}}"/>
+      <p *ngIf="!user.logged">Welcome</p>
+
+      <p *ngIf="user.logged"> {{user.info.name}} </p>
+      <div *ngIf="primary_photo_idx">
+            <img id="homeimg" (click)="onClickChange()" class="primary-photo" src="{{file.url(primary_photo_idx)}}" />
+      </div>
+      <div *ngIf='user.logged'>
+            <div *ngIf="!primary_photo_idx">
+                  <p>No primary photo, have one here!</p>
+                  <button class="btn btn-primary" routerLink="/primary_photo">Add primary photo</button>
+            </div>
+      </div>
 </div>
-<div *ngIf = 'user.logged'>
-<div *ngIf = "!primary_photo_idx">
-      <p>No primary photo, have one here!</p>
-      <button class="btn btn-primary" routerLink="/primary_photo">Add primary photo</button>
-</div>
-</div>
-</div>
+
+
+
+<h2>2</h2><h2>2</h2><h2>2</h2><h2>2</h2><h2>2</h2><h2>2</h2>
+<h2>2</h2><h2>2</h2><h2>2</h2><h2>2</h2><h2>2</h2><h2>2</h2>
+<h2>2</h2><h2>2</h2><h2>2</h2><h2>2</h2><h2>2</h2><h2>2</h2>
+<h2>2</h2><h2>2</h2><h2>2</h2><h2>2</h2><h2>2</h2><h2>2</h2>
+<h2>2</h2><h2>2</h2><h2>2</h2><h2>2</h2><h2>2</h2><h2>2</h2>

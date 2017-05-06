@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+$box-space: 8px;
+$header-height: 70px;
+
+body {
+    margin-top: $header-height;
+    font-size: 16px;
+}
+
+header {
+    height: $header-height;
+    overflow: hidden;
+}
+
+.panel {
+    position: fixed;
+    top: $header-height;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+
+    transition-duration: .2s;
+    height: 0;
+    &.active {
+        height: $header-height;
+    }
+
+}
+
+

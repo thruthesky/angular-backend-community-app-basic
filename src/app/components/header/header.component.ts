@@ -8,7 +8,10 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
 
-  constructor( private user: User, private router: Router, private file: File ) { 
+
+  showMenu: boolean = true;
+
+  constructor( public user: User, private router: Router, private file: File ) { 
 
   }
   ngOnInit() {

@@ -26,13 +26,13 @@ const appRoutes : Routes = [
     path: 'login', component: LoginPage
   },
   {
-    path: 'editUser', component: UserPage
+    path: 'profile', component: UserPage
   },
   {
     path: 'primary_photo', component: ProfilePicturePage
   },
   {
-    path: 'change_password', component: ChangePasswordComponent
+    path: 'password', component: ChangePasswordComponent
   },
 
 
