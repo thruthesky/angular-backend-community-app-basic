@@ -13,17 +13,17 @@
       Community App
     </div>
 
-    <div class="right pointer" (click)=" showMenu = ! showMenu ">
+    <div class="right pointer">
 
       <ul class="list-style-none list-float-left">
-        <li *ngIf=" user.logged " class="pr-2">
+        <li *ngIf=" user.logged " class="pr-2" routerLink="/profile">
           <span class="fa-stack fa-lg">
             <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
             <img class="fa fa-stack-1x" style="padding: 2px; width: 34px; border-radius: 50%;" src="{{ user.getBackendUrl() }}?route=download&user_idx={{ user.info.idx }}&&code=primary_photo&crop=34x34x50">
           </span>
           <div class="text">{{ user.info.id }}</div>
         </li>
-        <li>
+        <li (click)=" showMenu = ! showMenu ">
           <span class="fa-stack fa-lg">
             <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
             <i class="fa fa-bars fa-stack-1x slategrey" aria-hidden="true"></i>
@@ -91,9 +91,9 @@
     <li *ngIf=" user.logged && user.info.id == 'admin' ">
       <span class="fa-stack fa-lg">
         <i class="fa fa-circle fa-stack-2x slategrey" aria-hidden="true"></i>
-        <i class="fa fa-comment fa-stack-1x snow" aria-hidden="true"></i>
+        <i class="fa fa-gear fa-stack-1x snow" aria-hidden="true"></i>
       </span>
-      <div class="text">Admin Page</div>
+      <div class="text">Dashboard</div>
     </li>
 
     
