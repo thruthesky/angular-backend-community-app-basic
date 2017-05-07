@@ -9,38 +9,23 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ChangePasswordComponent } from './pages/change-password-page/change-password-page';
 
-import { ProfilePicturePage } from './pages/profile-picture-page/profile-picture-page';
+
 import { HomePage } from './pages/home-page/home-page';
 import { RegisterPage } from './pages/register-page/register-page';
 import { LoginPage } from './pages/login-page/login-page';
-import { UserPage } from './pages/user-page/user-page';
+import { ForumPage } from './pages/forum-page/forum-page';
 
-const appRoutes : Routes = [
-  {
-    path: '', component: HomePage, pathMatch: 'full'
-  },
-  {
-    path: 'register', component: RegisterPage
-  },
-  {
-    path: 'login', component: LoginPage
-  },
-  {
-    path: 'profile', component: UserPage
-  },
-  {
-    path: 'primary_photo', component: ProfilePicturePage
-  },
-  {
-    path: 'password', component: ChangePasswordComponent
-  },
+import { AngularBackendComponents } from './../angular-backend-components/angular-backend-components.module';
 
 
-
-  {
-    path: '**', component: HomePage
-  },
- 
+const appRoutes: Routes = [
+  { path: 'forum/:post_config_id', component: ForumPage },
+  { path: 'register', component: RegisterPage },
+  { path: 'profile', component: RegisterPage },
+  { path: 'login', component: LoginPage },
+  { path: 'password', component: ChangePasswordComponent },
+  { path: '', component: HomePage, pathMatch: 'full' },
+  { path: '**', component: HomePage },
 ]
 
 @NgModule({
@@ -50,9 +35,8 @@ const appRoutes : Routes = [
     HeaderComponent,
     RegisterPage,
     LoginPage,
-    UserPage,
-    ProfilePicturePage,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    ForumPage
   ],
   imports: [
     BrowserModule,
@@ -60,7 +44,8 @@ const appRoutes : Routes = [
     HttpModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
-    AngularBackendModule.forRoot()
+    AngularBackendModule.forRoot(),
+    AngularBackendComponents
   ],
   providers: [],
   bootstrap: [AppComponent]

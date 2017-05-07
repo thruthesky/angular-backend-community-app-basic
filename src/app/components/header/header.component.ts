@@ -9,24 +9,24 @@ export class HeaderComponent implements OnInit {
 
 
 
-  showMenu: boolean = true;
+  showMenu: boolean = false;
 
-  constructor( public user: User, private router: Router, private file: File ) { 
+  constructor(  private router: Router, public user: User, public file: File ) { 
 
   }
   ngOnInit() {
     
   }
 
-  onClickLogOut(){
-    if(confirm("Log-out?")){
-      this.user.logout();
-      this.router.navigate(['/login']);
-    }
-  }
+  // onClickLogOut(){
+  //   if(confirm("Log-out?")){
+  //     this.user.logout();
+  //     this.router.navigate(['/login']);
+  //   }
+  // }
 
-  onClickRegister() {
-    console.log("Going to register");
-  }
+  // onClickRegister() {
+  //   console.log("Going to register");
+  // }
 
 }

@@ -14,11 +14,24 @@
     </div>
 
     <div class="right pointer" (click)=" showMenu = ! showMenu ">
-      <span class="fa-stack fa-lg">
-          <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
-          <i class="fa fa-bars fa-stack-1x slategrey" aria-hidden="true"></i>
-        </span>
-      <div class="text">Menu</div>
+
+      <ul class="list-style-none list-float-left">
+        <li *ngIf=" user.logged " class="pr-2">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
+            <img class="fa fa-stack-1x" style="padding: 2px; width: 34px; border-radius: 50%;" src="{{ user.getBackendUrl() }}?route=download&user_idx={{ user.info.idx }}&&code=primary_photo&crop=34x34x50">
+          </span>
+          <div class="text">{{ user.info.id }}</div>
+        </li>
+        <li>
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
+            <i class="fa fa-bars fa-stack-1x slategrey" aria-hidden="true"></i>
+          </span>
+          <div class="text">Menu</div>
+        </li>
+      </ul>
+
     </div>
 
 
@@ -27,29 +40,29 @@
 </header>
 
 <nav class="panel bg-silver" [class.active]=" showMenu ">
-  <ul class="list-style-none list-float-left p-2s fs-08em text-center">
-    <li routerLink="/login">
+  <ul class="list-style-none list-float-left p-2s fs-08em text-center pointers">
+    <li *ngIf=" ! user.logged " routerLink="/login">
       <span class="fa-stack fa-lg">
         <i class="fa fa-circle fa-stack-2x slategrey" aria-hidden="true"></i>
         <i class="fa fa-sign-in fa-stack-1x snow" aria-hidden="true"></i>
       </span>
       <div class="text">Login</div>
     </li>
-    <li>
+    <li *ngIf=" user.logged " (click)=" user.logout(); " routerLink="/">
       <span class="fa-stack fa-lg">
         <i class="fa fa-circle fa-stack-2x slategrey" aria-hidden="true"></i>
         <i class="fa fa-sign-out fa-stack-1x snow" aria-hidden="true"></i>
       </span>
       <div class="text">Logout</div>
     </li>
-    <li routerLink="/register">
+    <li *ngIf=" ! user.logged " routerLink="/register">
       <span class="fa-stack fa-lg">
         <i class="fa fa-circle fa-stack-2x slategrey" aria-hidden="true"></i>
         <i class="fa fa-user-plus fa-stack-1x snow" aria-hidden="true"></i>
       </span>
       <div class="text">Register</div>
     </li>
-    <li routerLink="/profile">
+    <li *ngIf=" user.logged " routerLink="/profile">
       <span class="fa-stack fa-lg">
         <i class="fa fa-circle fa-stack-2x slategrey" aria-hidden="true"></i>
         <i class="fa fa-user fa-stack-1x snow" aria-hidden="true"></i>
@@ -57,13 +70,24 @@
       <div class="text">Profile</div>
     </li>
 
-    <li routerLink="/password">
+    <li *ngIf=" user.logged " routerLink="/password">
       <span class="fa-stack fa-lg">
         <i class="fa fa-circle fa-stack-2x slategrey" aria-hidden="true"></i>
         <i class="fa fa-lock fa-stack-1x snow" aria-hidden="true"></i>
       </span>
       <div class="text">Password</div>
     </li>
+
+
+    <li routerLink="/forum/test">
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x slategrey" aria-hidden="true"></i>
+        <i class="fa fa-comment fa-stack-1x snow" aria-hidden="true"></i>
+      </span>
+      <div class="text">Forum</div>
+    </li>
+
+
 
   </ul>
 </nav>
